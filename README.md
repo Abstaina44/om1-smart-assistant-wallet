@@ -131,5 +131,4 @@ For discussion and support, please join our community channels (Discord/Telegram
 
 This project is licensed under the **MIT License**.
 
-```Made with 💜 by 0xe.eph Ephraim
-```
+Made with 💜 by 0xe.eph Ephraim
