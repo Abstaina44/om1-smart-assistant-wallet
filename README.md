@@ -23,93 +23,118 @@ It demonstrates how AI assistants can interact with blockchain wallets for **aut
 
 ---
 
-## 🛠️ Setup  
+This is a perfectly structured project description. I will format it into a comprehensive and professional GitHub `README.md` file using Markdown.
 
-### 1. Clone the Repository  
-```bash
-git clone https://github.com/YOUR_USERNAME/om1-smart-assistant-wallet.git
-cd om1-smart-assistant-wallet
-
-2. Install Dependencies
-
-npm install
-
-3. Configure Environment Variables
-
-Create a .env file in the project root:
-
-PORT=3000
-OM1_API_URL=https://api.om1.example
-OM1_API_KEY=sk-xxxx
-RPC_URL=https://rpc.sepolia.org   # Testnet RPC endpoint
-PRIVATE_KEY=0xYOUR_TEST_PRIVATE_KEY   # Use ONLY a testnet wallet key
-MERCHANT_ADDRESS=0xMERCHANT_TEST_ADDR # Wallet address that receives payments
-
-
-⚠️ Important:
-
-Do not commit your real private keys.
-
-Use only testnet credentials for development and testing.
-
-🚀 Run the Server
-
-Start the server:
-
-npm start
-
-
-If successful, you should see:
-[dotenv@17.2.2] injecting env (6) from .env
-🚀 Server running on http://localhost:3000 
-
-
+````markdown
 # OM1 Smart Assistant Wallet
+
+This repository contains the backend implementation for the OM1 Smart Assistant Wallet, a proof-of-concept that integrates voice commands with on-chain cryptocurrency transactions. It demonstrates how a decentralized security monitoring engine can be used for real-time payments initiated through a simple conversational interface.
+
+---
+
+## 💡 Example Workflow
+
+The core function of this project is to link a voice command to an on-chain transaction.
+
+1.  **User Request:** A user issues a voice command, e.g., "Hey Alexa, order me a coffee."
+2.  **Assistant & OM1:** The Smart Assistant receives the request, relays it to the Express server, which then interfaces with the OM1 API.
+3.  **Payment Initiation:** A crypto payment is initiated from the configured testnet wallet to the Merchant's address.
+4.  **Status Return:** The transaction status (`✅ success / ⏳ pending / ❌ failed`) is returned to the user via the Smart Assistant.
+
+## 🛠️ Setup
+
+To get the server up and running, follow these steps:
+
+### 1. Clone the Repository
+
+Open your terminal and clone the project:
+
+```bash
+git clone [https://github.com/YOUR_USERNAME/om1-smart-assistant-wallet.git](https://github.com/YOUR_USERNAME/om1-smart-assistant-wallet.git)
+cd om1-smart-assistant-wallet
+````
+
+### 2\. Install Dependencies
+
+Install the necessary Node.js packages:
+
+```bash
+npm install
+```
+
+### 3\. Configure Environment Variables
+
+Create a file named `.env` in the root directory of the project. This file holds your sensitive credentials and configuration settings.
+
+**⚠️ Important Security Note:**
+
+  * **DO NOT** commit your `.env` file to GitHub.
+  * **DO NOT** use a private key for a wallet holding real assets. **Use ONLY testnet credentials.**
+
+The `.env` file must contain the following variables:
+
+```ini
+PORT=3000
+OM1_API_URL=[https://api.om1.example](https://api.om1.example)
+OM1_API_KEY=sk-xxxx
+RPC_URL=[https://rpc.sepolia.org](https://rpc.sepolia.org)         # Your Ethereum Testnet RPC endpoint
+PRIVATE_KEY=0xYOUR_TEST_PRIVATE_KEY     # Use ONLY a testnet wallet key
+MERCHANT_ADDRESS=0xMERCHANT_TEST_ADDR   # Testnet wallet address that receives payments
+```
+
+## 🚀 Run the Server
+
+Start the Express server using the following command:
+
+```bash
+npm start
+```
+
+If the setup is successful, you will see a confirmation message in the terminal:
+
+```
+[dotenv@17.2.2] injecting env (6) from .env
+🚀 Server running on http://localhost:3000
+```
 
 ## 📂 Project Structure
 
-| File / Folder       | Description                                           |
-|--------------------|-------------------------------------------------------|
-| `src/`             | Source code folder                                    |
-| `src/index.js`     | Entry point (Express server setup)                   |
-| `src/wallet.js`    | Handles wallet transactions                           |
-| `.env`             | Environment variables (not committed to GitHub)     |
-| `package.json`     | Project metadata and dependencies                     |
-| `README.md`        | Project documentation                                 |
+| File / Folder | Description |
+| :--- | :--- |
+| `src/` | Primary source code folder. |
+| `src/index.js` | Entry point for the application (Express server setup). |
+| `src/wallet.js` | Core logic for handling crypto wallet transactions and OM1 interaction. |
+| `.env` | Environment variables (excluded from version control). |
+| `package.json` | Project metadata and dependency list. |
+| `README.md` | This project documentation. |
 
+## 📹 Demo Requirements (For Bounty Submission)
 
-🧪 Example Workflow
+If submitting this implementation as part of a bounty or challenge, please ensure you meet the following requirements:
 
-1.User: "Hey Alexa, order me a coffee."
+1.  **Provide a demo video** clearly showing the end-to-end workflow (voice command $\rightarrow$ payment $\rightarrow$ status return).
+2.  **Post your implementation** on Twitter/X and tag the relevant team/protocol accounts.
+3.  **Submit your contribution** via a GitHub Issue or Pull Request (PR) and include the following details in your submission:
 
-2.OM1 receives request → communicates with Smart Assistant.
+| Detail | Example |
+| :--- | :--- |
+| **🏠 Assistant Integrated:** | `e.g., Alexa, Siri, Home Assistant` |
+| **🚀 Post Link:** | `[Link to your Twitter/X post]` |
+| **🎥 Demo Video:** | `[YouTube/Drive link to your video]` |
 
-3.Payment initiated via crypto wallet (Sepolia testnet).
+## 🤝 Contribution
 
-4. Transaction status (✅ success / ⏳ pending / ❌ failed) returned to user.
+Contributions are welcome\! Please ensure your code remains:
 
-📹 Demo Requirements (For Bounty Submission)
+  * **Modular:** Clearly separate wallet, API, and server logic.
+  * **Well-Documented:** Use inline comments for complex sections.
+  * **PR Ready:** Open a Pull Request for review and submission.
 
-Provide a demo video showing the workflow.
+For discussion and support, please join our community channels (Discord/Telegram).
 
-Post your implementation on Twitter/X and tag the team.
+## 📜 License
 
-Submit your contribution via GitHub Issues/PRs with:
+This project is licensed under the **MIT License**.
 
-🏠 Assistant Integrated: (e.g., Alexa, Siri, Home Assistant)
-
-🚀 Post Link: [Link to your post]
-
-🎥 Demo Video: [YouTube/Drive link]
-
-🤝 Contribution
-
-Keep your implementation modular and well-documented.
-
-Open a PR for submission.
-
-Join the community on Discord/Telegram for discussions and support.
-
-📜 License
-
-This project is licensed under the MIT License.
+```
+```
