@@ -21,8 +21,6 @@ It demonstrates how AI assistants can interact with blockchain wallets for **aut
   3. Payment is processed via wallet.  
   4. Confirmation is received and reported back.  
 
-
-````markdown
 # OM1 Smart Assistant Wallet
 
 This repository contains the backend implementation for the OM1 Smart Assistant Wallet, a proof-of-concept that integrates voice commands with on-chain cryptocurrency transactions. It demonstrates how a decentralized security monitoring engine can be used for real-time payments initiated through a simple conversational interface.
@@ -133,5 +131,5 @@ For discussion and support, please join our community channels (Discord/Telegram
 
 This project is licensed under the **MIT License**.
 
-```
+```Made with 💜 by 0xe.eph Ephraim
 ```
