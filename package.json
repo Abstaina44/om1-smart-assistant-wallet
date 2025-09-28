@@ -1,0 +1,30 @@
+{
+  "name": "om1-smart-assistant-wallet",
+  "version": "1.0.0",
+  "description": "Integrates OM1 with a smart assistant to process payments via a crypto wallet. Implements features from OM1 Bounty #367.",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Your Name <you@example.com>",
+  "license": "ISC",
+  "keywords": [
+    "crypto",
+    "wallet",
+    "assistant",
+    "OM1",
+    "payments"
+  ],
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.2",
+    "express": "^4.19.2",
+    "axios": "^1.12.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
