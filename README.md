@@ -21,9 +21,6 @@ It demonstrates how AI assistants can interact with blockchain wallets for **aut
   3. Payment is processed via wallet.  
   4. Confirmation is received and reported back.  
 
----
-
-This is a perfectly structured project description. I will format it into a comprehensive and professional GitHub `README.md` file using Markdown.
 
 ````markdown
 # OM1 Smart Assistant Wallet
