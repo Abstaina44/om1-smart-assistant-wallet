@@ -4,26 +4,46 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-// Setup provider + wallet
+// Setup provider & wallet
 const provider = new ethers.JsonRpcProvider(process.env.RPC_URL);
 const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
-const merchant = process.env.MERCHANT_ADDRESS;
 
 /**
- * Send ETH payment to merchant
- * @param {string} amount - ETH amount (as string, e.g. "0.01")
+ * Send ETH to a recipient
+ * @param {string} recipient - Recipient wallet address
+ * @param {string} amount - ETH amount as string
  */
-export async function payMerchant(amount) {
-  console.log(`💸 Sending ${amount} ETH to ${merchant}...`);
-
+export async function payMerchant(recipient, amount) {
   const tx = await wallet.sendTransaction({
-    to: merchant,
+    to: recipient,
     value: ethers.parseEther(amount),
   });
 
-  console.log("⛓️ Tx sent:", tx.hash);
-  await tx.wait(); // wait for confirmation
-  console.log("✅ Tx confirmed!");
-
+  console.log(`✅ Transaction sent! Hash: ${tx.hash}`);
   return tx.hash;
+}
+
+/**
+ * Get current wallet balance
+ */
+export async function getBalance() {
+  const balance = await provider.getBalance(wallet.address);
+  return ethers.formatEther(balance);
+}
+
+/**
+ * Get transaction details by hash
+ * @param {string} hash
+ */
+export async function getTransaction(hash) {
+  const tx = await provider.getTransaction(hash);
+  if (!tx) return { status: "not found" };
+
+  return {
+    hash: tx.hash,
+    from: tx.from,
+    to: tx.to,
+    value: ethers.formatEther(tx.value),
+    blockNumber: tx.blockNumber,
+  };
 }
